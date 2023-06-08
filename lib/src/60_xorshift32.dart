@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: (c) 2021 Art Galkin <github.com/rtmigo>
 // SPDX-License-Identifier: MIT
 
+import 'package:meta/meta.dart';
 import 'package:xrandom/src/21_base32.dart';
 
 /// Random number generator based on **xorshift32** algorithm by G. Marsaglia.
@@ -16,6 +17,9 @@ class Xorshift32 extends RandomBase32 {
     }
   }
   late int _state;
+
+  @protected
+  int get state => _state;
 
   static const defaultSeed = 0xd9e2fcc8;
 
